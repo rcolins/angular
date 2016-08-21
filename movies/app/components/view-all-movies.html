@@ -1,0 +1,20 @@
+<section>
+    <h1>My Movies</h1>
+    <div> <button type="button"  ui-sref="createMovie" class="btn btn-success">Add Movie</button> </div>
+</section>
+<section>
+    <ul>
+        <li ng-repeat="movie in listMovieController.getAllMovies() | orderBy : '-releaseYear'">
+            <article>
+                <header>
+                    <h1>{{movie.name}}</h1>
+                </header>
+                <div style="float: right;padding-right: 10%"> <movie-rating rating="{{movie.rating}}"></movie-rating> </div>
+                <p>
+                    {{movie.description}}
+                </p>
+            </article>
+            <footer><button type="button" ui-sref="viewMovie({movieId : {{movie.id}} })" class="btn btn-xs btn-info">Detail</button></footer>
+        </li>
+    </ul>
+</section>

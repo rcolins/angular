@@ -1,0 +1,36 @@
+    <div>
+        <header>
+            <h1>{{viewMovieController.movie.name}}</h1>
+        </header>
+        <div style="float: right;padding-right: 10%"> Rating : <movie-rating rating="{{viewMovieController.movie.rating}}"></movie-rating> </div>
+        <div>
+            {{viewMovieController.movie.description}}
+        </div>
+        <div>
+            <label> Directed By : </label>
+            <label> {{viewMovieController.movie.director}} </label>
+        </div>
+
+        <div>
+            <label> Release Year : </label>
+            <label> {{viewMovieController.movie.releaseYear}} </label>
+        </div>
+
+        <div>
+            <label> Language : </label>
+            <label> {{viewMovieController.movie.language}} </label>
+        </div>
+    </div>
+   <section>
+        <header>
+            <h1>Characters</h1>
+        </header>
+        <p>
+        <ul>
+            <li ng-repeat="character in viewMovieController.movie.characters">
+                {{character.character}}({{character.actor}})
+            </li>
+        </ul>
+        </p>
+    </section>
+
